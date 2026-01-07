@@ -1,3 +1,28 @@
-.pp{
-    color:red;
+body{ 
+   
+   
+    background-color: blue;     
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.div0 { 
+   
+    background-image:url("../bg.jpg") ; 
+    background-color: blue;     
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.div1 { 
+   
+    background-image:url("../bg.2jpg") ; 
+    background-color: blue;     
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.div2 { 
+   
+    background-image:url("../bg3.jpg") ; 
+    background-color: blue;     
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
