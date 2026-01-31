@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Optional: for visibility */
+}
+
+.background-container {
+    /* Set a specific size for the main container or let it fill the screen */
+    width: 80vw;
+    height: 80vh;
+    position: relative; /* Crucial for absolute positioning of children */
+    display: flex;       /* Use flexbox to center its child */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;    /* Ensures images don't spill out */
+}
+
+.background-image {
+    /* This image will cover the entire .background-container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    position: absolute; /* Position it behind the other content */
+    top: 0;
+    left: 0;
+}
+
+.center-image-container {
+    /* This container holds the middle image and the innermost one */
+    position: relative; /* Keep it in the flow, use flexbox to center its child */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Optional: set a size for this container if needed */
+    width: 50%; 
+    height: 50%;
+    z-index: 10; /* Bring it to the front */
+}
+
+.middle-image {
+    /* This is the middle image itself, centered within its container */
+    max-width: 100%;
+    max-height: 100%;
+    /* No need for position absolute because of the parent's flexbox centering */
+}
+
+.innermost-image-container {
+    /* This container holds the final image, centered within the middle image's container */
+    position: absolute; /* Position relative to .center-image-container */
+    display: flex;      /* Use flexbox to center its child */
+    justify-content: center;
+    align-items: center;
+    top: 0;             /* Span the whole parent container to center accurately */
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.innermost-image {
+    /* This is the final, smallest image */
+    max-width: 50px; /* Example size */
+    max-height: 50px;
+    /* Centered by its parent's flexbox properties */
+}
+</style>
+</head>
+<body>
+    <div class="background-container">
+    <img src="./assets/hero-bg.png" alt="Background" class="background-image">
+    
+    <div class="center-image-container">
+        <img src="./assets/hero-circle.png" alt="Middle Image" class="middle-image">
+        
+        <div class="innermost-image-container">
+            <img src="./assets/hero-inner.png" alt="Innermost Image" class="innermost-image">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
